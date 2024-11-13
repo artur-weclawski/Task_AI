@@ -1,5 +1,6 @@
 import OpenAI, { OpenAIError } from "openai";
 import fs from 'fs';
+import 'dotenv/config'
 
 const openai = new OpenAI({ apiKey: process.env.API_KEY });
 
@@ -22,7 +23,7 @@ function saveResponseToFile(filePath, response){
 const userContent = loadDataFromFile('./textToImport.txt')
 
 try{
-const response = await openai.chat.completions.create({
+    const response = await openai.chat.completions.create({
     model: 'gpt-4o-mini',
     messages: [
         { role: 'system', content: 
@@ -35,14 +36,16 @@ const response = await openai.chat.completions.create({
                 - do każdej grafiki umieść podpis pod samą grafiką używając tagu <figcaption>.
             - Nie generuj kodu CSS ani JavaScript.
             - Zwrócony kod ma zawierać jedynie zawartość <body> BEZ SAMEGO ZNACZNIKA <body>, tylko zawartość, która by się tam znalazła.
-            - Nie dołączaj znaczników <html>, <head>
+            - Nie dołączaj znaczników <html>, <head>.
+            - Stopkę uwzględnij w znaczniku <footer>.
+            - Całość uwzględnij w znaczniku <article>.
             `
         },
         { role: 'user', content: userContent }
     ]
-})
-saveResponseToFile('./response.html', response.choices[0].message.content)
-console.log(response.choices[0].message.content)
+    })
+    saveResponseToFile('./artykul.html', response.choices[0].message.content)
+    console.log(response.choices[0].message.content)
 
 } catch (error) {
     if (error instanceof OpenAIError){
@@ -50,7 +53,7 @@ console.log(response.choices[0].message.content)
         console.log("Error name: ", error.name)
         console.log("Error headers: ", error.headers)
         console.log("Error message: ", error.message)
-    }else{
-        console.error("Error: ", error)
+    } else {
+        console.error("Unknown error: ", error)
     }
 }
