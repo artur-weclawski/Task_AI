@@ -1,6 +1,6 @@
 import OpenAI, { OpenAIError } from "openai";
 import fs from 'fs';
-const openai = new OpenAI({ apiKey: secret });
+const openai = new OpenAI({ apiKey: process.env.API_KEY });
 function loadDataFromFile(filePath){
     try{
         return fs.readFileSync(filePath, 'utf8');
