@@ -4,7 +4,7 @@ Aplikacja pozwala na wczytanie zawartości pliku tekstowego (```Zadanie dla JJun
 
 Dla tego zadania został wybrany model: gpt-4o, ponieważ pozwala on na generowanie tekstu. Model otrzymuje dwie wiadomości, pierwsza (system) ma na celu "ustawienie" AI aby działało w konkretny sposób, druga wiadomość (user) przesyła zawartość pliku.
 
-## Instrukcja urochomienia
+## Instrukcja uruchomienia
 1. Pobierz repozytorium (https://github.com/artur-weclawski/Task_AI.git).
 2. Upewnij się, że masz zainstalowane node.js.
 3. Uruchom terminal, następnie przejdź do wnętrzna folderu z pobranym repozytorium.
