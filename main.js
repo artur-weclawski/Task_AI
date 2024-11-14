@@ -53,8 +53,7 @@ if(!userContent){
         ]
         })
         saveResponseToFile('./artykul.html', response.choices[0].message.content)
-        console.log(response.choices[0].message.content)
-
+        
     } catch (error) {
         if (error instanceof OpenAIError){
             console.log("Error status: ", error.status)
