@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zadanie rekrutacyjne</title>
+    <style>
+        html, body {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            margin: 0;
+        }
+        article {
+            display: inline-block;
+            padding-left: 50px;
+            padding-right: 50px;
+        }
+        h1 {
+            align-self: center;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: 2.5em;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        h1::before,
+        h1::after {
+            content: '';
+            flex: 1;
+            border-top: 3px solid #000;
+            margin: 0 10px;
+        }
+        h2 {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: 1.5em;
+            padding-left: 50px;
+        }
+        footer {
+            text-align: center;
+        }
+        figure {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        img {
+            min-height: 350px;
+            min-width: 600px;
+            max-height: 350px;
+            max-width: 600px;
+            background-color: lightgray;
+            border-radius: 5px;
+        }
+        img[src*="image_placeholder.jpg"] {
+            height: 350px;
+            width: 600px;
+            display: block;
+            position: relative;
+            z-index: 1;
+        }
+        img[src*="image_placeholder.jpg"]::after{
+            content: url("https://www.svgrepo.com/show/17692/photo-camera.svg");
+            display: block;
+            position: absolute;
+            scale: 25%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-200%, -200%);
+            filter: opacity(25%);
+        }
+        figcaption {
+            font-style: italic;
+            text-align: center;
+        }
+        p {
+            font-size: 1.2em;
+            text-align: justify;
+            padding-left: 50px;
+            padding-right: 50px;
+        }
+
+        @media only screen and (max-width: 768px) {
+        figure {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        img {
+            min-height: 250px;
+            min-width: 50%;
+            max-height: 400px;
+            max-width: 80%;
+            background-color: lightgray;
+            border-radius: 5px;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+        img[src*="image_placeholder.jpg"] {
+            height: 250px;
+            width: 400px;
+        }
+        figcaption {
+            font-style: italic;
+            text-align: center;
+        }
+        p {
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+        h2{
+            padding-left: 10px;
+        }
+        }
+    </style>
+</head>
+<body>
+    
+</body>
+</html>
